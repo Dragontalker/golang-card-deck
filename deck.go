@@ -32,6 +32,13 @@ func newDeck() deck {
 		"King",
 	}
 
+	for _, suit := range cardSuits {
+		for _, value := range cardValues {
+			cards = append(cards, value+" of "+suit)
+		}
+	}
+
+	return cards
 }
 
 func (d deck) print() {
