@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"os"
 	"strings"
 )
 
@@ -68,5 +69,7 @@ func newDeckFromFile(fileName string) deck {
 	if err != nil {
 		// Option #1 - log the error and return a call to newDeck()
 		// Option #2 - log the error and entirely quit the program
+		fmt.Println("Error: ", err)
+		os.Exit(1)
 	}
 }
